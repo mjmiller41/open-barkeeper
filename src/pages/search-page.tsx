@@ -1,31 +1,79 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
 import { RecipeCard } from "@/components/recipe-card";
 import { Recipe, searchRecipesAdvanced } from "@/lib/recipes";
 
 export function SearchPage() {
-    const [name, setName] = useState("");
-    const [ingredients, setIngredients] = useState("");
-    const [keywords, setKeywords] = useState("");
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    // Initialize state from URL params
+    const initialName = searchParams.get("name") || "";
+    const initialIngredients = searchParams.get("ingredients") || "";
+    const initialKeywords = searchParams.get("keywords") || "";
+
+    // Keep local state for the inputs so typing doesn't trigger URL updates immediately if we want to wait for "Search"
+    // However, the prompt implies "load a new search page with the user provided parameters" when clicked.
+    // But usually standard pattern is inputs are controlled by local state, and sync to URL on search.
+    // OR inputs are controlled by URL directly (if we want instant search, but there is a button).
+    // Let's use local state for inputs, initializing from URL.
+    const [name, setName] = useState(initialName);
+    const [ingredients, setIngredients] = useState(initialIngredients);
+    const [keywords, setKeywords] = useState(initialKeywords);
+
     const [results, setResults] = useState<Recipe[]>([]);
     const [hasSearched, setHasSearched] = useState(false);
 
-    const handleSearch = () => {
-        const ingredientList = ingredients
-            .split(",")
-            .map((i) => i.trim())
-            .filter((i) => i);
-        const keywordList = keywords
-            .split(",")
-            .map((k) => k.trim())
-            .filter((k) => k);
+    // Sync local state when URL params change (e.g. back button)
+    useEffect(() => {
+        setName(searchParams.get("name") || "");
+        setIngredients(searchParams.get("ingredients") || "");
+        setKeywords(searchParams.get("keywords") || "");
 
-        const found = searchRecipesAdvanced({
-            name: name.trim() || undefined,
-            ingredients: ingredientList,
-            keywords: keywordList,
+        // Perform search if we have any params
+        const currentName = searchParams.get("name") || "";
+        const currentIngredients = searchParams.get("ingredients") || "";
+        const currentKeywords = searchParams.get("keywords") || "";
+
+        if (currentName || currentIngredients || currentKeywords) {
+            const ingredientList = currentIngredients
+                .split(",")
+                .map((i) => i.trim())
+                .filter((i) => i);
+            const keywordList = currentKeywords
+                .split(",")
+                .map((k) => k.trim())
+                .filter((k) => k);
+
+            const found = searchRecipesAdvanced({
+                name: currentName.trim() || undefined,
+                ingredients: ingredientList,
+                keywords: keywordList,
+            });
+            setResults(found);
+            setHasSearched(true);
+        } else {
+            // If clear, maybe reset? or just leave empty results?
+            // "Search Recipes" implies explicit action, but usually empty URL means empty state.
+            setResults([]);
+            setHasSearched(false);
+        }
+    }, [searchParams]);
+
+    const handleSearch = () => {
+        // Update URL params, which will trigger the Effect above
+        setSearchParams((prev) => {
+            const newParams = new URLSearchParams(prev);
+            if (name.trim()) newParams.set("name", name.trim());
+            else newParams.delete("name");
+
+            if (ingredients.trim()) newParams.set("ingredients", ingredients.trim());
+            else newParams.delete("ingredients");
+
+            if (keywords.trim()) newParams.set("keywords", keywords.trim());
+            else newParams.delete("keywords");
+
+            return newParams;
         });
-        setResults(found);
-        setHasSearched(true);
     };
 
     return (
