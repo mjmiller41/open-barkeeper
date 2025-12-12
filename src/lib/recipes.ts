@@ -1,19 +1,19 @@
 export interface Ingredient {
-    quantity: string;
-    measure: string;
-    ingredient: string;
+	quantity: string;
+	measure: string;
+	ingredient: string;
 }
 
 export interface Recipe {
-    name: string;
-    description: string;
-    github: string;
-    ingredients: Ingredient[];
-    directions: string[];
-    image: string;
-    source?: string;
-    keywords: string[];
-    slug: string; // Added for routing
+	name: string;
+	description: string;
+	github: string;
+	ingredients: Ingredient[];
+	directions: string[];
+	image: string;
+	source?: string;
+	keywords: string[];
+	slug: string; // Added for routing
 }
 
 // Load all recipe JSON files
@@ -21,88 +21,142 @@ const recipeFiles = import.meta.glob<Recipe>('/src/recipes/*.json', { eager: tru
 
 // Process recipes into a list
 const staticRecipes: Recipe[] = Object.entries(recipeFiles).map(([path, module]) => {
-    const slug = path.split('/').pop()?.replace('.json', '') || '';
-    const data = (module as any).default || module;
-    return {
-        ...data,
-        slug,
-    };
+	const slug = path.split('/').pop()?.replace('.json', '') || '';
+	const data = (module as any).default || module;
+	return {
+		...data,
+		slug,
+	};
 });
 
 // Helper to get user recipes from storage
 function getUserRecipes(): Recipe[] {
-    try {
-        const stored = localStorage.getItem('user_recipes');
-        return stored ? JSON.parse(stored) : [];
-    } catch (e) {
-        console.error("Failed to load user recipes", e);
-        return [];
-    }
+	try {
+		const stored = localStorage.getItem('user_recipes');
+		return stored ? JSON.parse(stored) : [];
+	} catch (e) {
+		console.error("Failed to load user recipes", e);
+		return [];
+	}
 }
 
 // Helper to save user recipes
 function saveUserRecipe(recipe: Recipe) {
-    const current = getUserRecipes();
-    const updated = [...current, recipe];
-    localStorage.setItem('user_recipes', JSON.stringify(updated));
-    // Dispatch event for reactivity if needed, or just rely on hooks
-    window.dispatchEvent(new Event('recipes-updated'));
+	const current = getUserRecipes();
+	const updated = [...current, recipe];
+	localStorage.setItem('user_recipes', JSON.stringify(updated));
+	// Dispatch event for reactivity if needed, or just rely on hooks
+	window.dispatchEvent(new Event('recipes-updated'));
 }
 
 export function getAllRecipes(): Recipe[] {
-    return [...staticRecipes, ...getUserRecipes()];
+	return [...staticRecipes, ...getUserRecipes()];
 }
 
 export function getRecipeBySlug(slug: string): Recipe | undefined {
-    return getAllRecipes().find((recipe) => recipe.slug === slug);
+	return getAllRecipes().find((recipe) => recipe.slug === slug);
 }
 
 export function searchRecipes(query: string): Recipe[] {
-    const lowerQuery = query.toLowerCase();
-    return getAllRecipes().filter((recipe) => {
-        return (
-            recipe.name.toLowerCase().includes(lowerQuery) ||
-            recipe.keywords.some((keyword) => keyword.toLowerCase().includes(lowerQuery)) ||
-            recipe.ingredients.some((ing) => ing.ingredient.toLowerCase().includes(lowerQuery))
-        );
-    });
+	const lowerQuery = query.toLowerCase();
+	return getAllRecipes().filter((recipe) => {
+		return (
+			recipe.name.toLowerCase().includes(lowerQuery) ||
+			recipe.keywords.some((keyword) => keyword.toLowerCase().includes(lowerQuery)) ||
+			recipe.ingredients.some((ing) => ing.ingredient.toLowerCase().includes(lowerQuery))
+		);
+	});
 }
 
 export function searchRecipesAdvanced(criteria: {
-    name?: string;
-    ingredients?: string[];
-    keywords?: string[];
+	name?: string;
+	ingredients?: string[];
+	keywords?: string[];
 }): Recipe[] {
-    return getAllRecipes().filter((recipe) => {
-        // Name check
-        if (criteria.name) {
-            if (!recipe.name.toLowerCase().includes(criteria.name.toLowerCase())) {
-                return false;
-            }
-        }
+	return getAllRecipes().filter((recipe) => {
+		// Name check
+		if (criteria.name) {
+			if (!recipe.name.toLowerCase().includes(criteria.name.toLowerCase())) {
+				return false;
+			}
+		}
 
-        // Ingredients check (must match ALL provided ingredients)
-        if (criteria.ingredients && criteria.ingredients.length > 0) {
-            const recipeIngredients = recipe.ingredients.map(i => i.ingredient.toLowerCase());
-            const hasAllIngredients = criteria.ingredients.every(searchIng =>
-                recipeIngredients.some(recipeIng => recipeIng.includes(searchIng.toLowerCase()))
-            );
-            if (!hasAllIngredients) return false;
-        }
+		// Ingredients check (must match ALL provided ingredients)
+		if (criteria.ingredients && criteria.ingredients.length > 0) {
+			const recipeIngredients = recipe.ingredients.map(i => i.ingredient.toLowerCase());
+			const hasAllIngredients = criteria.ingredients.every(searchIng =>
+				recipeIngredients.some(recipeIng => recipeIng.includes(searchIng.toLowerCase()))
+			);
+			if (!hasAllIngredients) return false;
+		}
 
-        // Keywords check (must match ALL provided keywords)
-        if (criteria.keywords && criteria.keywords.length > 0) {
-            const recipeKeywords = recipe.keywords.map(k => k.toLowerCase());
-            const hasAllKeywords = criteria.keywords.every(searchKw =>
-                recipeKeywords.some(recipeKw => recipeKw.includes(searchKw.toLowerCase()))
-            );
-            if (!hasAllKeywords) return false;
-        }
+		// Keywords check (must match ALL provided keywords)
+		if (criteria.keywords && criteria.keywords.length > 0) {
+			const recipeKeywords = recipe.keywords.map(k => k.toLowerCase());
+			const hasAllKeywords = criteria.keywords.every(searchKw =>
+				recipeKeywords.some(recipeKw => recipeKw.includes(searchKw.toLowerCase()))
+			);
+			if (!hasAllKeywords) return false;
+		}
 
-        return true;
-    });
+		return true;
+	});
 }
 
+
+import Fuse from 'fuse.js';
+
 export function addUserRecipe(recipe: Recipe) {
-    saveUserRecipe(recipe);
+	saveUserRecipe(recipe);
+}
+
+export function searchRecipesFuzzy(
+	query: string,
+	filters: {
+		ingredients?: string[];
+		keywords?: string[];
+	} = {}
+): Recipe[] {
+	let results = getAllRecipes();
+
+	// 1. Fuzzy Search by Query
+	if (query.trim()) {
+		const fuse = new Fuse(results, {
+			keys: [
+				{ name: 'name', weight: 3 }, // Higher weight for name matches
+				{ name: 'ingredients.ingredient', weight: 1 },
+				{ name: 'keywords', weight: 2 },
+			],
+			threshold: 0.4, // Adjust for fuzziness (0.0 = exact, 1.0 = match anything)
+			ignoreLocation: true,
+		});
+
+		results = fuse.search(query).map((result) => result.item);
+	}
+
+	// 2. Exact/Normalized Filtering
+	// We can use a simple normalization helper for the filters
+	const normalize = (s: string) => s.toLowerCase().trim();
+
+	if (filters.ingredients && filters.ingredients.length > 0) {
+		results = results.filter((recipe) =>
+			filters.ingredients!.every((filterIng) =>
+				recipe.ingredients.some((recipeIng) =>
+					normalize(recipeIng.ingredient).includes(normalize(filterIng))
+				)
+			)
+		);
+	}
+
+	if (filters.keywords && filters.keywords.length > 0) {
+		results = results.filter((recipe) =>
+			filters.keywords!.every((filterTag) =>
+				recipe.keywords.some((recipeTag) =>
+					normalize(recipeTag).includes(normalize(filterTag))
+				)
+			)
+		);
+	}
+
+	return results;
 }
