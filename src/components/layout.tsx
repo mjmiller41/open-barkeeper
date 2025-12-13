@@ -12,7 +12,7 @@ export function Layout() {
 	}, [location.pathname]);
 
 	return (
-		<div className="min-h-screen bg-gray-50 font-sans text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+		<div className="flex min-h-screen flex-col bg-gray-50 font-sans text-gray-900 dark:bg-gray-900 dark:text-gray-100">
 			<header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-gray-800 dark:bg-gray-950/80">
 				<div className="container mx-auto flex h-16 items-center justify-between px-4">
 					<div className="flex items-center">
@@ -64,10 +64,33 @@ export function Layout() {
 					</div>
 				)}
 			</header>
-			<main className="container mx-auto px-4 py-6">
+			<main className="container mx-auto flex-1 px-4 py-6">
 				<Outlet />
 			</main>
 			<FirstLoadPrompt />
+			<footer className="border-t border-gray-200 bg-white py-8 dark:border-gray-800 dark:bg-gray-950">
+				<div className="container mx-auto px-4">
+					<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+						<div className="text-sm text-gray-500 dark:text-gray-400">
+							&copy; {new Date().getFullYear()} Open Barkeeper. All rights reserved.
+						</div>
+						<nav className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400">
+							<Link to="/about" className="hover:text-gray-900 hover:underline dark:hover:text-gray-50">
+								About
+							</Link>
+							<Link to="/contact" className="hover:text-gray-900 hover:underline dark:hover:text-gray-50">
+								Contact
+							</Link>
+							<Link to="/privacy" className="hover:text-gray-900 hover:underline dark:hover:text-gray-50">
+								Privacy
+							</Link>
+							<Link to="/terms" className="hover:text-gray-900 hover:underline dark:hover:text-gray-50">
+								Terms
+							</Link>
+						</nav>
+					</div>
+				</div>
+			</footer>
 		</div>
 	);
 }

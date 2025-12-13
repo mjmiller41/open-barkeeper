@@ -8,6 +8,10 @@ import { NotFound } from "@/pages/not-found";
 import { RecipeDetailPage } from "@/pages/recipe-detail-page";
 import { RecipesPage } from "@/pages/recipes-page";
 import { SearchPage } from "@/pages/search-page";
+import { AboutPage } from "@/pages/about-page";
+import { ContactPage } from "@/pages/contact-page";
+import { PrivacyPolicyPage } from "@/pages/privacy-policy-page";
+import { TermsPage } from "@/pages/terms-page";
 import { RouteProvider } from "@/providers/router-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
@@ -34,6 +38,10 @@ createRoot(document.getElementById("root")!).render(
 							<Route path="/recipes/new" element={<CreateRecipePage />} />
 							<Route path="/recipes/:slug" element={<RecipeDetailPage />} />
 							<Route path="/search" element={<SearchPage />} />
+							<Route path="/about" element={<AboutPage />} />
+							<Route path="/contact" element={<ContactPage />} />
+							<Route path="/privacy" element={<PrivacyPolicyPage />} />
+							<Route path="/terms" element={<TermsPage />} />
 						</Route>
 						<Route path="*" element={<NotFound />} />
 					</Routes>

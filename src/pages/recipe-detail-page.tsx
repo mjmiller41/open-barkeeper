@@ -74,6 +74,21 @@ export function RecipeDetailPage() {
 		setIsEditing(false);
 	};
 
+	// Generate Schema.org JSON-LD
+	const structuredData = recipe ? {
+		"@context": "https://schema.org/",
+		"@type": "Recipe",
+		"name": recipe.name,
+		"image": [getRecipeImageSrc(recipe.image)],
+		"description": recipe.description,
+		"keywords": recipe.keywords.join(", "),
+		"recipeIngredient": recipe.ingredients.map(i => `${i.quantity} ${i.measure} ${i.ingredient}`.trim()),
+		"recipeInstructions": recipe.directions.map((step) => ({
+			"@type": "HowToStep",
+			"text": step
+		})),
+	} : null;
+
 	if (!recipe) {
 		return (
 			<div className="flex min-h-[400px] flex-col items-center justify-center">
@@ -130,6 +145,11 @@ export function RecipeDetailPage() {
 
 	return (
 		<div className="mx-auto max-w-4xl">
+			{structuredData && (
+				<script type="application/ld+json">
+					{JSON.stringify(structuredData)}
+				</script>
+			)}
 			<div className="mb-6 flex items-center justify-between">
 				<button
 					onClick={() => navigate(-1)}
