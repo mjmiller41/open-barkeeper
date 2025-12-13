@@ -1,21 +1,24 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { Layout } from "@/components/layout";
-import { CreateRecipePage } from "@/pages/create-recipe-page";
-import { HomeScreen } from "@/pages/home-screen";
-import { NotFound } from "@/pages/not-found";
-import { RecipeDetailPage } from "@/pages/recipe-detail-page";
-import { RecipesPage } from "@/pages/recipes-page";
-import { SearchPage } from "@/pages/search-page";
-import { AboutPage } from "@/pages/about-page";
-import { ContactPage } from "@/pages/contact-page";
-import { PrivacyPolicyPage } from "@/pages/privacy-policy-page";
-import { TermsPage } from "@/pages/terms-page";
+import { LoadingSpinner } from "@/components/loading-spinner";
 import { RouteProvider } from "@/providers/router-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 import { registerSW } from "virtual:pwa-register";
+
+// Lazy load pages
+const CreateRecipePage = lazy(() => import("@/pages/create-recipe-page").then(module => ({ default: module.CreateRecipePage })));
+const HomeScreen = lazy(() => import("@/pages/home-screen").then(module => ({ default: module.HomeScreen })));
+const NotFound = lazy(() => import("@/pages/not-found").then(module => ({ default: module.NotFound })));
+const RecipeDetailPage = lazy(() => import("@/pages/recipe-detail-page").then(module => ({ default: module.RecipeDetailPage })));
+const RecipesPage = lazy(() => import("@/pages/recipes-page").then(module => ({ default: module.RecipesPage })));
+const SearchPage = lazy(() => import("@/pages/search-page").then(module => ({ default: module.SearchPage })));
+const AboutPage = lazy(() => import("@/pages/about-page").then(module => ({ default: module.AboutPage })));
+const ContactPage = lazy(() => import("@/pages/contact-page").then(module => ({ default: module.ContactPage })));
+const PrivacyPolicyPage = lazy(() => import("@/pages/privacy-policy-page").then(module => ({ default: module.PrivacyPolicyPage })));
+const TermsPage = lazy(() => import("@/pages/terms-page").then(module => ({ default: module.TermsPage })));
 
 registerSW({
 	onNeedRefresh() {
@@ -31,20 +34,22 @@ createRoot(document.getElementById("root")!).render(
 		<ThemeProvider>
 			<BrowserRouter>
 				<RouteProvider>
-					<Routes>
-						<Route element={<Layout />}>
-							<Route path="/" element={<HomeScreen />} />
-							<Route path="/recipes" element={<RecipesPage />} />
-							<Route path="/recipes/new" element={<CreateRecipePage />} />
-							<Route path="/recipes/:slug" element={<RecipeDetailPage />} />
-							<Route path="/search" element={<SearchPage />} />
-							<Route path="/about" element={<AboutPage />} />
-							<Route path="/contact" element={<ContactPage />} />
-							<Route path="/privacy" element={<PrivacyPolicyPage />} />
-							<Route path="/terms" element={<TermsPage />} />
-						</Route>
-						<Route path="*" element={<NotFound />} />
-					</Routes>
+					<Suspense fallback={<LoadingSpinner />}>
+						<Routes>
+							<Route element={<Layout />}>
+								<Route path="/" element={<HomeScreen />} />
+								<Route path="/recipes" element={<RecipesPage />} />
+								<Route path="/recipes/new" element={<CreateRecipePage />} />
+								<Route path="/recipes/:slug" element={<RecipeDetailPage />} />
+								<Route path="/search" element={<SearchPage />} />
+								<Route path="/about" element={<AboutPage />} />
+								<Route path="/contact" element={<ContactPage />} />
+								<Route path="/privacy" element={<PrivacyPolicyPage />} />
+								<Route path="/terms" element={<TermsPage />} />
+							</Route>
+							<Route path="*" element={<NotFound />} />
+						</Routes>
+					</Suspense>
 				</RouteProvider>
 			</BrowserRouter>
 		</ThemeProvider>
