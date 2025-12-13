@@ -16,6 +16,14 @@ export interface Recipe {
 	slug: string; // Added for routing
 }
 
+export function getRecipeImageSrc(imagePath: string): string {
+	if (!imagePath) return "/vite.svg"; // Default fallback
+	if (imagePath.startsWith("http") || imagePath.startsWith("data:")) {
+		return imagePath;
+	}
+	return `/img/recipes/${imagePath}`;
+}
+
 // Load all recipe JSON files
 const recipeFiles = import.meta.glob<Recipe>('/src/recipes/*.json', { eager: true });
 
@@ -41,16 +49,51 @@ function getUserRecipes(): Recipe[] {
 }
 
 // Helper to save user recipes
-function saveUserRecipe(recipe: Recipe) {
-	const current = getUserRecipes();
-	const updated = [...current, recipe];
-	localStorage.setItem('user_recipes', JSON.stringify(updated));
-	// Dispatch event for reactivity if needed, or just rely on hooks
+function saveUserRecipes(recipes: Recipe[]) {
+	localStorage.setItem('user_recipes', JSON.stringify(recipes));
 	window.dispatchEvent(new Event('recipes-updated'));
 }
 
+function saveUserRecipe(recipe: Recipe) {
+	const current = getUserRecipes();
+	const updated = [...current, recipe];
+	saveUserRecipes(updated);
+}
+
+export function updateUserRecipe(recipe: Recipe) {
+	const current = getUserRecipes();
+	const index = current.findIndex(r => r.slug === recipe.slug);
+
+	if (index >= 0) {
+		// Update existing user recipe
+		const updated = [...current];
+		updated[index] = recipe;
+		saveUserRecipes(updated);
+	} else {
+		// Add as new (or override static)
+		saveUserRecipe(recipe);
+	}
+}
+
+export function deleteUserRecipe(slug: string) {
+	const current = getUserRecipes();
+	const updated = current.filter(r => r.slug !== slug);
+	saveUserRecipes(updated);
+}
+
+export function isUserRecipe(slug: string): boolean {
+	const current = getUserRecipes();
+	return current.some(r => r.slug === slug);
+}
+
 export function getAllRecipes(): Recipe[] {
-	return [...staticRecipes, ...getUserRecipes()];
+	const userRecipes = getUserRecipes();
+	const userRecipeSlugs = new Set(userRecipes.map(r => r.slug));
+
+	// Filter out static recipes that have been overridden by user recipes
+	const visibleStaticRecipes = staticRecipes.filter(r => !userRecipeSlugs.has(r.slug));
+
+	return [...visibleStaticRecipes, ...userRecipes];
 }
 
 export function getRecipeBySlug(slug: string): Recipe | undefined {
