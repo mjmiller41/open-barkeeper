@@ -6,7 +6,8 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "test:perf": "lhci autorun"
     },
     "dependencies": {
         "@tailwindcss/typography": "^0.5.16",
@@ -27,6 +28,7 @@
         "tailwindcss-react-aria-components": "^2.0.0"
     },
     "devDependencies": {
+        "@lhci/cli": "^0.15.1",
         "@tailwindcss/postcss": "^4.1.11",
         "@trivago/prettier-plugin-sort-imports": "^5.2.2",
         "@types/node": "^24.2.1",
