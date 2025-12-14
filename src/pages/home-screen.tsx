@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export const HomeScreen = () => {
 	return (
-		<div className="flex h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 text-center">
+		<div className="flex flex-col items-center justify-center px-4 text-center">
 			<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-50">Open Barkeeper</h1>
 			<p className="mt-6 max-w-lg text-lg leading-8 text-gray-600 dark:text-gray-300">
 				Your open source cocktail recipe manager. Browse hundreds of recipes, search by ingredients, and manage your own collection.

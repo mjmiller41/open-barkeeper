@@ -18,7 +18,7 @@ export function Layout() {
 
 	return (
 		<div className="flex min-h-screen flex-col bg-gray-50 font-sans text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-			<header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-gray-800 dark:bg-gray-950/80">
+			<header className="sticky top-0 z-50 w-full flex-[0_0_auto] border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-gray-800 dark:bg-gray-950/80">
 				<div className="container mx-auto flex h-16 items-center justify-between px-4">
 					<div className="flex items-center">
 						<Link to="/" className="mr-6 flex items-center space-x-2 text-xl font-bold">
@@ -79,7 +79,7 @@ export function Layout() {
 					</div>
 				)}
 			</header>
-			<main className="container mx-auto flex-1 px-4 py-6">
+			<main className="container mx-auto flex-[1_0_auto] px-4 py-6">
 				<Outlet />
 			</main>
 			{showOfflinePrompt && (
@@ -87,7 +87,7 @@ export function Layout() {
 					<FirstLoadPrompt isOpen={showOfflinePrompt} onClose={() => setShowOfflinePrompt(false)} />
 				</Suspense>
 			)}
-			<footer className="border-t border-gray-200 bg-white py-8 dark:border-gray-800 dark:bg-gray-950">
+			<footer className="border-t border-gray-200 bg-white py-8 flex-[0_0_auto] dark:border-gray-800 dark:bg-gray-950">
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
 						<div className="text-sm text-gray-500 dark:text-gray-400">
