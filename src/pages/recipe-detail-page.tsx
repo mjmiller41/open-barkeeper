@@ -50,8 +50,9 @@ export function RecipeDetailPage() {
 			.map(line => {
 				const parts = line.trim().split(" ");
 				const quantity = parts[0] || "";
-				const ingredient = parts.slice(1).join(" ") || line.trim();
-				return { quantity, measure: "", ingredient };
+				const measure = parts[1] || "";
+				const ingredient = parts.slice(2).join(" ") || line.trim();
+				return { quantity, measure, ingredient };
 			})
 			.filter(i => i.ingredient);
 

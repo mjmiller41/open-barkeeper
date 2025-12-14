@@ -19,6 +19,7 @@ const AboutPage = lazy(() => import("@/pages/about-page").then(module => ({ defa
 const ContactPage = lazy(() => import("@/pages/contact-page").then(module => ({ default: module.ContactPage })));
 const PrivacyPolicyPage = lazy(() => import("@/pages/privacy-policy-page").then(module => ({ default: module.PrivacyPolicyPage })));
 const TermsPage = lazy(() => import("@/pages/terms-page").then(module => ({ default: module.TermsPage })));
+const SettingsPage = lazy(() => import("@/pages/settings-page").then(module => ({ default: module.SettingsPage })));
 
 registerSW({
 	onNeedRefresh() {
@@ -46,6 +47,7 @@ createRoot(document.getElementById("root")!).render(
 								<Route path="/contact" element={<ContactPage />} />
 								<Route path="/privacy" element={<PrivacyPolicyPage />} />
 								<Route path="/terms" element={<TermsPage />} />
+								<Route path="/settings" element={<SettingsPage />} />
 							</Route>
 							<Route path="*" element={<NotFound />} />
 						</Routes>

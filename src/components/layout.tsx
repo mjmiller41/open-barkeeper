@@ -34,6 +34,9 @@ export function Layout() {
 							<Link to="/recipes/new" className="transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
 								Add Recipe
 							</Link>
+							<Link to="/settings" className="transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
+								Settings
+							</Link>
 						</nav>
 					</div>
 					<div className="flex items-center gap-2">
@@ -74,6 +77,9 @@ export function Layout() {
 							</Link>
 							<Link to="/recipes/new" className="text-sm font-medium transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
 								Add Recipe
+							</Link>
+							<Link to="/settings" className="text-sm font-medium transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
+								Settings
 							</Link>
 						</nav>
 					</div>
