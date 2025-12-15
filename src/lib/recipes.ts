@@ -60,6 +60,10 @@ function saveUserRecipe(recipe: Recipe) {
     saveUserRecipes(updated);
 }
 
+export function deleteAllUserRecipes() {
+    saveUserRecipes([]);
+}
+
 // Public API for Import/Export
 export function exportUserRecipes(): Recipe[] {
     return getUserRecipes();

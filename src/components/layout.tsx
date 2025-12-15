@@ -3,12 +3,13 @@ import { Link, Outlet, useLocation } from "react-router";
 import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
 import { useAdSense } from "@/hooks/use-adsense";
 
-const FirstLoadPrompt = lazy(() => import("./first-load-prompt").then(module => ({ default: module.FirstLoadPrompt })));
+// FirstLoadPrompt removed
+
 
 export function Layout() {
 	useAdSense();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [showOfflinePrompt, setShowOfflinePrompt] = useState(false);
+	// const [showOfflinePrompt, setShowOfflinePrompt] = useState(false); // Removed
 	const location = useLocation();
 
 	// Close menu when route changes
@@ -40,14 +41,7 @@ export function Layout() {
 						</nav>
 					</div>
 					<div className="flex items-center gap-2">
-						<Tooltip title="Save recipes locally">
-							<TooltipTrigger onPress={() => setShowOfflinePrompt(true)}>
-								<span className="sr-only">Save recipes locally</span>
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
-									<path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-								</svg>
-							</TooltipTrigger>
-						</Tooltip>
+						{/* Download button removed */}
 						<button
 							className="flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 hover:bg-gray-100 focus:outline-none md:hidden dark:border-gray-800 dark:bg-gray-950 dark:text-gray-400 dark:hover:bg-gray-900"
 							onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -88,11 +82,7 @@ export function Layout() {
 			<main className="container mx-auto flex-[1_0_auto] px-4 py-6">
 				<Outlet />
 			</main>
-			{showOfflinePrompt && (
-				<Suspense fallback={null}>
-					<FirstLoadPrompt isOpen={showOfflinePrompt} onClose={() => setShowOfflinePrompt(false)} />
-				</Suspense>
-			)}
+			{/* FirstLoadPrompt removed */}
 			<footer className="border-t border-gray-200 bg-white py-8 flex-[0_0_auto] dark:border-gray-800 dark:bg-gray-950">
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
