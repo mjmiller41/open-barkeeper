@@ -1,56 +1,88 @@
-# Untitled UI starter kit for Vite
+# Open Barkeeper
 
-This is an official Untitled UI starter kit for Vite. Kickstart your Untitled UI project with Vite in seconds.
+Open Barkeeper is an open-source cocktail recipe application built with modern web technologies.
 
-## Untitled UI React
+> **Inspiration Credit**: This project is inspired by [OpenDrinks](https://github.com/alfg/opendrinks) and includes all recipes contained in that repository.
 
-[Untitled UI React](https://www.untitledui.com/react) is the world’s largest collection of open-source React UI components. Everything you need to design and develop modern, beautiful interfaces—fast.
+## Features
 
-Built with React 19.1, Tailwind CSS v4.1, TypeScript 5.8, and React Aria, Untitled UI React components deliver modern performance, type safety, and maintainability.
+- 🍹 **Extensive Recipe Collection**: Browse hundreds of cocktail recipes.
+- 🔍 **Search & Filter**: Find recipes by name, ingredients, or keywords.
+- 📱 **PWA Support**: Install as an app and use offline.
+- ⚡ **Modern Stack**: Built for speed and performance.
 
-[Learn more](https://www.untitledui.com/react) • [Documentation](https://www.untitledui.com/react/docs/introduction) • [Figma](https://www.untitledui.com/figma) • [FAQs](https://www.untitledui.com/faqs)
+## Tech Stack
 
-## Getting started
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-First, run the development server:
+## Getting Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- Node.js (Latest LTS recommended)
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/mjmiller41/open-barkeeper.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd open-barkeeper
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
 
 Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
-You can start editing the app by modifying the components in `src/` folder. The page auto-updates as you edit the file.
+## Contributing
 
-## Resources
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Untitled UI React is built on top of [Untitled UI Figma](https://www.untitledui.com/figma), the world's largest and most popular Figma UI kit and design system. Explore more:
+### Adding a New Recipe
 
-**[Untitled UI Figma:](https://www.untitledui.com/react/resources/figma-files)** The world's largest Figma UI kit and design system.
-<br/>
-**[Untitled UI Icons:](https://www.untitledui.com/react/resources/icons)** A clean, consistent, and neutral icon library crafted specifically for modern UI design.
-<br/>
-**[Untitled UI file icons:](https://www.untitledui.com/react/resources/file-icons)** Free file format icons, designed specifically for modern web and UI design.
-<br/>
-**[Untitled UI flag icons:](https://www.untitledui.com/react/resources/flag-icons)** Free country flag icons, designed specifically for modern web and UI design.
-<br/>
-**[Untitled UI avatars:](https://www.untitledui.com/react/resources/avatars)** Free placeholder user avatars and profile pictures to use in your projects.
-<br/>
-**[Untitled UI logos:](https://www.untitledui.com/react/resources/logos)** Free fictional company logos to use in your projects.
+1. **Fork the Project**
+2. **Create your Feature Branch** (`git checkout -b feature/AmazingRecipe`)
+3. **Add Recipe Data**:
+    - Create a new JSON file in `src/recipes/`.
+    - The file format should be:
+        ```json
+        {
+            "name": "Drink Name",
+            "description": "A brief description of the drink.",
+            "github": "your-github-username",
+            "ingredients": [
+                {
+                    "quantity": "45",
+                    "measure": "ml",
+                    "ingredient": "Gin"
+                }
+            ],
+            "directions": ["Step 1", "Step 2"],
+            "image": "drink-name.jpg",
+            "keywords": ["tag1", "tag2"]
+        }
+        ```
+4. **Add Recipe Image**:
+    - Add a high-quality image of the drink to `public/img/recipes/`.
+    - Ensure the filename matches the `image` field in your JSON file.
+5. **Commit your Changes** (`git commit -m 'Add some AmazingRecipe'`)
+6. **Push to the Branch** (`git push origin feature/AmazingRecipe`)
+7. **Open a Pull Request**
 
 ## License
 
-Untitled UI React open-source components are licensed under the MIT license, which means you can use them for free in unlimited commercial projects.
-
-> [!NOTE]
-> This license applies only to the starter kit and to the components included in this open-source repository. [Untitled UI React PRO](https://www.untitledui.com/react) includes hundreds more advanced UI components and page examples and is subject to a separate [license agreement](https://www.untitledui.com/license).
-
-[Untitled UI license agreement →](https://www.untitledui.com/license)
-
-[Frequently asked questions →](https://www.untitledui.com/faqs)
+Distributed under the MIT License. See `LICENSE` for more information.
