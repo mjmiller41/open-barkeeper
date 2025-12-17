@@ -230,7 +230,7 @@ export function RecipeDetailPage() {
 							alt={recipe.name}
 							className="h-full w-full object-cover"
 							onError={(e: any) => {
-								(e.target as HTMLImageElement).src = "/vite.svg";
+								(e.target as HTMLImageElement).src = "/logo.svg";
 							}}
 						/>
 					</div>

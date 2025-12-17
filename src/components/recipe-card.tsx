@@ -19,7 +19,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
 					className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
 					loading="lazy"
 					onError={(e: any) => {
-						(e.target as HTMLImageElement).src = "/vite.svg"; // Fallback image
+						(e.target as HTMLImageElement).src = "/logo.svg"; // Fallback image
 					}}
 				/>
 			</div>
