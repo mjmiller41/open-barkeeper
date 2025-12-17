@@ -1,0 +1,36 @@
+{
+    "name": "Apple Old Fashioned",
+    "description": "A warm, spiced, and fruit-forward cocktail, perfect for autumn. ",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "oz bourbon"
+        },
+        {
+            "quantity": "3/4",
+            "measure": "",
+            "ingredient": "oz apple cider syrup"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "dash angostura bitters"
+        }
+    ],
+    "directions": [
+        "Add bourbon, cider syrup, and bitters to a stirring glass with ice.",
+        "Stir",
+        "Strain into a rocks glass over ice.",
+        "Garnish with apple slices"
+    ],
+    "image": "apple-old-fashioned.jpg",
+    "keywords": [
+        "Autumn",
+        "Fall",
+        "bourbon",
+        "apple",
+        "cider"
+    ]
+}

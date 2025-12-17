@@ -1,0 +1,50 @@
+{
+    "name": "Irish Cream Liqueur (Bailey's)",
+    "description": "Baileys Irish Cream really is a simple combination of cream, Irish whisky, and (as they say on their website) \"other flavors\". Those other flavors are hints of vanilla, coffee, chocolate, and Almond. Yes, you read that right, ALMOND. Adding just a touch of almond extract takes this home recipe and makes it indistinguishable from the store bought version. ",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "2/3 cup Jameson whiskey"
+        },
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "Tbsp. Chocolate syrup"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "can Sweetened condensed milk"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "cup Dairy (cream, heavy cream, half-n-half)"
+        },
+        {
+            "quantity": "1/2",
+            "measure": "",
+            "ingredient": "tsp. Instant coffee granules"
+        },
+        {
+            "quantity": "1/2",
+            "measure": "",
+            "ingredient": "tsp. Almond extract"
+        }
+    ],
+    "directions": [
+        "Add sweetened condensed milk and whiskey in a blender. ",
+        "Blend. ",
+        "Add chocolate syrup, coffee granules, almond extract, and dairy to blender. ",
+        "Blend. ",
+        "!!! Do not blend too much, cream will separate from the mix !!!"
+    ],
+    "image": "irish-cream-liqueur-bailey-s.jpg",
+    "keywords": [
+        "Bailey's",
+        "Homemade",
+        "Liqueur"
+    ]
+}

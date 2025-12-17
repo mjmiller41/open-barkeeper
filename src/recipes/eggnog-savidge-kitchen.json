@@ -1,0 +1,51 @@
+{
+    "name": "Eggnog (Savidge Kitchen)",
+    "description": "Eggnog, historically also known as a milk punch or an egg milk punch when alcoholic beverages are added, is a rich, chilled, sweetened, dairy-based beverage traditionally made with milk, cream, sugar, egg yolk and whipped egg white. A distilled spirit such as brandy, rum, whiskey or bourbon is often a key ingredient.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "4",
+            "measure": "",
+            "ingredient": "Eggs (separated)"
+        },
+        {
+            "quantity": "1/3",
+            "measure": "",
+            "ingredient": "cup Sugar"
+        },
+        {
+            "quantity": "~1",
+            "measure": "",
+            "ingredient": "tsp. Nutmeg"
+        },
+        {
+            "quantity": "1.5",
+            "measure": "",
+            "ingredient": "cups Milk/milk substitute"
+        },
+        {
+            "quantity": "1.5",
+            "measure": "",
+            "ingredient": "cup Heavy cream"
+        },
+        {
+            "quantity": "4",
+            "measure": "",
+            "ingredient": "oz. Bourbon, Brandy, or Rum (Adjust to preferred amount)"
+        }
+    ],
+    "directions": [
+        "Separate eggs.",
+        "Add 1/3 cup sugar and egg yolks to a bowl and beat until all of the sugar is dissolved.",
+        "Add milk, cream and bourbon to egg yolk mixture and blend until mixed. ",
+        "In a separate bowl beat egg whites while gradually adding 1 tbsp. of sugar,  until stiff white peaks form. ",
+        "Add egg whites and nutmeg to egg yolk/milk mixture. ",
+        "Blend until egg whites are completely incorporated."
+    ],
+    "image": "eggnog-savidge-kitchen.jpg",
+    "keywords": [
+        "Holidays",
+        "Christmas",
+        "Eggnog"
+    ]
+}

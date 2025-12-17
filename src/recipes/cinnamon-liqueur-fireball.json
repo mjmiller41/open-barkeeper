@@ -1,0 +1,45 @@
+{
+    "name": "Cinnamon Liqueur (Fireball)",
+    "description": "Fireball is a popular, sweet, cinnamon-flavored whisky liqueur known for its \"Tastes like heaven, burns like hell\" tagline, made by blending Canadian whisky with cinnamon flavor and sweeteners, bottled at 33% ABV, and best enjoyed as shots or mixed with drinks like cola, cider, or lemonade. Developed by Sazerac, it's famous for its fiery kick and easy-drinking, candy-like profile, making it a top shot brand in the U.S.. ",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "Canadian",
+            "measure": "",
+            "ingredient": "Whiskey"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "1/2 cups Water"
+        },
+        {
+            "quantity": "1/2",
+            "measure": "",
+            "ingredient": "cup Sugar"
+        },
+        {
+            "quantity": "~12",
+            "measure": "",
+            "ingredient": "Cinnamon sticks (Cassia)"
+        },
+        {
+            "quantity": "1/4",
+            "measure": "",
+            "ingredient": "tsp. Chili flakes (omit if less heat desired)"
+        }
+    ],
+    "directions": [
+        "Add water, cinnamon sticks, chili to pot and boil. ",
+        "Cover and simmer for at least 10 minutes. ",
+        "Add sugar, simmer another 10 minutes. ",
+        "Cool then strain (use coffee filter for a clearer final product) into measuring cup. ",
+        "Add whiskey at 2:1 ratio. (final ABV 26-27%)"
+    ],
+    "image": "cinnamon-liqueur-fireball.jpg",
+    "keywords": [
+        "Fireball",
+        "Liqueur",
+        "Cinnamon"
+    ]
+}

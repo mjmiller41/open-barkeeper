@@ -1,0 +1,61 @@
+{
+    "name": "Frozen Chocolate Mudslide",
+    "description": "A rich, creamy, blended alcoholic drink that tastes like a boozy chocolate milkshake.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "oz Kahlua"
+        },
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "oz Bailey’s"
+        },
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "oz vodka"
+        },
+        {
+            "quantity": "4",
+            "measure": "",
+            "ingredient": "scoops vanilla ice cream"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "cup crushed ice"
+        },
+        {
+            "quantity": "Chocolate",
+            "measure": "",
+            "ingredient": "syrup"
+        },
+        {
+            "quantity": "Whipped",
+            "measure": "",
+            "ingredient": "cream"
+        },
+        {
+            "quantity": "Chocolate",
+            "measure": "",
+            "ingredient": "shavings"
+        }
+    ],
+    "directions": [
+        "Drizzle inside of glasses with chocolate syrup and chill.",
+        "Add Kahlua, Bailey’s, vodka, ice cream, and crushed ice to a blender.",
+        "Blend until smooth.",
+        "Pour into glasses.",
+        "Garnish with whipped cream and chocolate shavings."
+    ],
+    "image": "frozen-chocolate-mudslide.jpg",
+    "keywords": [
+        "Frozen",
+        "Shake",
+        "Chocolate",
+        "Dessert"
+    ]
+}

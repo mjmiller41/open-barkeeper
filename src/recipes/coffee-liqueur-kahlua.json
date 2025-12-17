@@ -1,0 +1,41 @@
+{
+    "name": "Coffee Liqueur (Kahlua)",
+    "description": "This recipes gives you DIY coffee liqueur fast and easy- no waiting for anything to steep or soak. It also uses REAL coffee. You can make Coffee Liqueur with any spirit you choose- Vodka, Rum and Bourbon are all in my line-up. But keep in mind that the spirit will affect the flavor of the coffee liqueur. ",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "cups Sugar"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "cup Coffee (strong brew/dark roast)"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "tbsp. Vanilla extract (high quality)"
+        },
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "cups  White Rum, Vodka, or Bourbon"
+        }
+    ],
+    "directions": [
+        "Add sugar and coffee to heavy bottom pot. ",
+        "Slowly bring to a boil (med/med-high).",
+        "Take syrup off heat as soon as it boils. ",
+        "Let syrup cool completely. ",
+        "Add Syrup, alcohol of choice, and vanilla extract to storage container and shake to mix."
+    ],
+    "image": "coffee-liqueur-kahlua.jpg",
+    "keywords": [
+        "Kahlua",
+        "Liqueur",
+        "Coffee",
+        "Homemade"
+    ]
+}

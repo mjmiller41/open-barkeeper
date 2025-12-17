@@ -1,0 +1,42 @@
+{
+    "name": "Watermelon Express",
+    "description": "Recipe from Margaritaville at Sea Paradise cruise.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "oz Corazón Silver Tequila"
+        },
+        {
+            "quantity": "3",
+            "measure": "",
+            "ingredient": "fresh watermelon cubes"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Monin Watermelon syrup"
+        },
+        {
+            "quantity": "3/4",
+            "measure": "",
+            "ingredient": "oz fresh orange juice"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz fresh lime juice"
+        }
+    ],
+    "directions": [
+        "Muddle the watermelon in a shaker.",
+        "Add ice and the remaining ingredients. ",
+        "Shake vigorously and double strain into a highball glass with ice. ",
+        "Garnish with a lime wheel."
+    ],
+    "image": "watermelon-express.jpg",
+    "keywords": [
+        "Margaritaville at Sea"
+    ]
+}

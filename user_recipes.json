@@ -1,0 +1,759 @@
+[
+  {
+    "slug": "apple-old-fashioned-1765748288619",
+    "name": "Apple Old Fashioned",
+    "description": "A warm, spiced, and fruit-forward cocktail, perfect for autumn. ",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "oz bourbon"
+      },
+      {
+        "quantity": "3/4",
+        "measure": "",
+        "ingredient": "oz apple cider syrup"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "dash angostura bitters"
+      }
+    ],
+    "directions": [
+      "Add bourbon, cider syrup, and bitters to a stirring glass with ice.",
+      "Stir",
+      "Strain into a rocks glass over ice.",
+      "Garnish with apple slices"
+    ],
+    "image": "https://cf.ltkcdn.net/www/images/std/354460-800x531-apple-cider-old-fashioned-1255326827.jpg",
+    "keywords": [
+      "Autumn",
+      "Fall",
+      "bourbon",
+      "apple",
+      "cider"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "frozen-chocolate-mudslide-1765749289208",
+    "name": "Frozen Chocolate Mudslide",
+    "description": "A rich, creamy, blended alcoholic drink that tastes like a boozy chocolate milkshake.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "oz Kahlua"
+      },
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "oz Bailey’s"
+      },
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "oz vodka"
+      },
+      {
+        "quantity": "4",
+        "measure": "",
+        "ingredient": "scoops vanilla ice cream"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "cup crushed ice"
+      },
+      {
+        "quantity": "Chocolate",
+        "measure": "",
+        "ingredient": "syrup"
+      },
+      {
+        "quantity": "Whipped",
+        "measure": "",
+        "ingredient": "cream"
+      },
+      {
+        "quantity": "Chocolate",
+        "measure": "",
+        "ingredient": "shavings"
+      }
+    ],
+    "directions": [
+      "Drizzle inside of glasses with chocolate syrup and chill.",
+      "Add Kahlua, Bailey’s, vodka, ice cream, and crushed ice to a blender.",
+      "Blend until smooth.",
+      "Pour into glasses.",
+      "Garnish with whipped cream and chocolate shavings."
+    ],
+    "image": "https://www.thecookierookie.com/wp-content/uploads/2022/04/Featured-Frozen-Mudslide-1.jpg",
+    "keywords": [
+      "Frozen",
+      "Shake",
+      "Chocolate",
+      "Dessert"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "chocolate-mudslide-1765749817334",
+    "name": "Chocolate Mudslide",
+    "description": "Similar to the traditional mudslide with the addition of chocolate liqueur.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Kahlua"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Bailey’s"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz chocolate liqueur"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz vodka"
+      }
+    ],
+    "directions": [
+      "Drizzle inside of serving glass with ice.",
+      "Shake all ingredients in shake with ice.",
+      "Strain into serving glass with ice.",
+      "Garnish"
+    ],
+    "image": "https://preppykitchen.com/wp-content/uploads/2022/01/Mudslide-Feature.jpg",
+    "keywords": [
+      "Chocolate",
+      "Mudslide"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "dirty-snowman-1765750233399",
+    "name": "Dirty Snowman",
+    "description": "A boozy hot chocolate float made with ice cream, hot chocolate, and Baileys Irish Cream.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "cup hot chocolate"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Bailey’s"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Kahlua"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz chocolate liqueur"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "scoop ice cream"
+      },
+      {
+        "quantity": "Whipped",
+        "measure": "",
+        "ingredient": "cream"
+      },
+      {
+        "quantity": "Chocolate",
+        "measure": "",
+        "ingredient": "shavings"
+      }
+    ],
+    "directions": [
+      "Combine all the liqueurs in a large mug.",
+      "Add hot chocolate and ice cream.",
+      "Garnish."
+    ],
+    "image": "https://princesspinkygirl.com/wp-content/uploads/2021/01/Dirty-Snowman-square.jpg",
+    "keywords": [
+      "Ice Cream",
+      "Float",
+      "Chocolate"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "hot-cocoa-1765750537621",
+    "name": "Hot Cocoa",
+    "description": "A cold weather classic.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "cup milk"
+      },
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "tbsp cocoa powder"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "1/2 tbsp brown sugar"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "tbsp heavy cream"
+      },
+      {
+        "quantity": "1/4",
+        "measure": "",
+        "ingredient": "tsp vanilla extract"
+      }
+    ],
+    "directions": [
+      "Warm the milk.",
+      "Combine with remaining ingredients.",
+      "Garnish with whipped cream or marshmallows"
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMi-RT2Tps-xDAXGVLEgWqVzbOy0q-HisR0pqANLqyON4k3hquQ2WMP8sPksg2MchS3YpKr5CtL61xdUdoxX-QNOs5OeIW0wIVdtqcTw&s=10",
+    "keywords": [
+      "Winter",
+      "Non-Alcoholic",
+      "Cocoa"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "chocolate-liqueur-1765751074859",
+    "name": "Chocolate Liqueur",
+    "description": "A creamy easy and so delicious Chocolate Liqueur Recipe. A perfect after dinner dessert Drink.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "cup water"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "1/4 cup sugar"
+      },
+      {
+        "quantity": "3/4",
+        "measure": "",
+        "ingredient": "cup unsweetened cocoa powder"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "tsp vanilla extract"
+      },
+      {
+        "quantity": "1/2",
+        "measure": "",
+        "ingredient": "tsp espresso powder"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "pinch salt"
+      },
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "cups brandy or spirit of choice"
+      }
+    ],
+    "directions": [
+      "Blend dry ingredients together in a bowl.",
+      "Bring water to a boil",
+      "Add dry ingredient mixture, stirring to avoid clumping. ",
+      "Let boil for a minute, then remove from heat and let cool completely. ",
+      "Once cooled, add to a lidded container with 2 cups of brandy, seal then shake to combine.",
+      "To make MILK CHOCOLATE LIQUEUR:",
+      "Make the syrup the same as above. ",
+      "When it comes to blending, add 14oz sweetened condensed milk to a blender with 1 1/4 cup brandy.",
+      "Blend for 10 seconds.",
+      "Add 1 cup cream, and 1 cup of the syrup. Blend again till just combined.",
+      "Transfer to a lidded container, and keep in the fridge for up to two months. ",
+      "Separation is normal! Simply give this a good shake before pouring. Cheers! "
+    ],
+    "image": "https://anitalianinmykitchen.com/wp-content/uploads/2014/04/chocolate-liqueur-pic-1-of-1.jpg",
+    "keywords": [
+      "Chocolate",
+      "Liqueur"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "cider-whiskey-sour-1765811887937",
+    "name": "Cider Whiskey Sour",
+    "description": "This Apple Cider Whiskey Sour is the perfect chilly weather cocktail! Warm cinnamon spice, whiskey and lemon juice get added to this wonderful apple cider cocktail to make it a delicious hit.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "oz whiskey"
+      },
+      {
+        "quantity": "1.5",
+        "measure": "",
+        "ingredient": "oz cider simple syrup"
+      },
+      {
+        "quantity": "1.5",
+        "measure": "",
+        "ingredient": "oz lemon juice"
+      },
+      {
+        "quantity": "cinnamon",
+        "measure": "",
+        "ingredient": "stick for garnish (optional)"
+      }
+    ],
+    "directions": [
+      "Add the apple cider, whiskey, lemon juice, and simple syrup to a cocktail shaker filled with ice and shake. ",
+      "Strain into a glass filled with ice. ",
+      "Garnish with a cinnamon stick and serve."
+    ],
+    "image": "https://herbsandflour.com/wp-content/uploads/2021/11/Apple-Cider-Whiskey-Sour-791x1024.jpg",
+    "keywords": [
+      "Cider",
+      "Apple",
+      "Sour"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "the-alexander-1765812390724",
+    "name": "The Alexander",
+    "description": "A classic, creamy dessert drink that is most famously known in its modern variation, the Brandy Alexander. The original gin-based version appeared in print as early as 1916, while the brandy version, which has largely surpassed the original in popularity, emerged in the 1920s.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Gin"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Creme de Cacao"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz heavy cream"
+      }
+    ],
+    "directions": [
+      "Chill a glass: Place a coupe or martini glass in the freezer or fill it with ice and water while you prepare the drink.",
+      "Combine ingredients: Add the brandy, crème de cacao, and cream into a cocktail shaker filled halfway with ice cubes.",
+      "Shake vigorously: Shake well for 15-20 seconds until the mixture is frothy and the outside of the shaker is very cold.",
+      "Strain and serve: Strain the mixture into your chilled glass. For a smoother texture, you can double-strain through a fine mesh strainer.",
+      "Garnish: Grate fresh nutmeg over the top and serve immediately. "
+    ],
+    "image": "https://www.texanerin.com/content/uploads/2022/11/alexander-cocktail-image-1200-1.jpg",
+    "keywords": [
+      "Gin",
+      "Classic"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "cinnamon-liqueur-(fireball)-1765812678058",
+    "name": "Cinnamon Liqueur (Fireball)",
+    "description": "Fireball is a popular, sweet, cinnamon-flavored whisky liqueur known for its \"Tastes like heaven, burns like hell\" tagline, made by blending Canadian whisky with cinnamon flavor and sweeteners, bottled at 33% ABV, and best enjoyed as shots or mixed with drinks like cola, cider, or lemonade. Developed by Sazerac, it's famous for its fiery kick and easy-drinking, candy-like profile, making it a top shot brand in the U.S.. ",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "Canadian",
+        "measure": "",
+        "ingredient": "Whiskey"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "1/2 cups Water"
+      },
+      {
+        "quantity": "1/2",
+        "measure": "",
+        "ingredient": "cup Sugar"
+      },
+      {
+        "quantity": "~12",
+        "measure": "",
+        "ingredient": "Cinnamon sticks (Cassia)"
+      },
+      {
+        "quantity": "1/4",
+        "measure": "",
+        "ingredient": "tsp. Chili flakes (omit if less heat desired)"
+      }
+    ],
+    "directions": [
+      "Add water, cinnamon sticks, chili to pot and boil. ",
+      "Cover and simmer for at least 10 minutes. ",
+      "Add sugar, simmer another 10 minutes. ",
+      "Cool then strain (use coffee filter for a clearer final product) into measuring cup. ",
+      "Add whiskey at 2:1 ratio. (final ABV 26-27%)"
+    ],
+    "image": "https://i.ytimg.com/vi/BsZLE0XimIk/sddefault.jpg",
+    "keywords": [
+      "Fireball",
+      "Liqueur",
+      "Cinnamon"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "chocolate-martini-1765813011955",
+    "name": "Chocolate Martini",
+    "description": "The chocolate martini is a popular, rich, and creamy dessert cocktail that typically combines vodka, chocolate liqueur, and crème de cacao. Believed to have been invented by movie stars Rock Hudson and Elizabeth Taylor in the 1950s, it has since become a staple on dessert menus worldwide. ",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "ounce vodka (plain or vanilla)"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "ounce chocolate liqueur (e.g., Godiva, Mozart)"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "ounce crème de cacao"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "ounce half-and-half or heavy cream (optional, for a creamier texture)"
+      },
+      {
+        "quantity": "Chocolate",
+        "measure": "",
+        "ingredient": "syrup and/or chocolate shavings for garnish (optional)"
+      },
+      {
+        "quantity": "Ice",
+        "measure": "",
+        "ingredient": "Ice"
+      }
+    ],
+    "directions": [
+      "Prepare the glass: If desired, hold a chilled martini glass at an angle and drizzle chocolate syrup in a spiral around the inside. For a chocolate-rimmed glass, place some chocolate syrup or a small amount of water on a plate, dip the rim to wet it, then dip the rim into a separate plate of chocolate shavings or a mix of cocoa powder and sugar. Place the prepared glass in the freezer for a few minutes to set the chocolate.",
+      "Mix the cocktail: ",
+      "Fill a cocktail shaker halfway with ice. ",
+      "Add the vodka, chocolate liqueur, crème de cacao, and half-and-half (if using).",
+      "Shake vigorously: Secure the lid and shake vigorously for about 15 seconds, until the outside of the shaker is frosty and well-chilled.",
+      "Serve: Strain the mixture into your prepared martini glass.",
+      "Garnish: Garnish with extra chocolate shavings or a sprinkle of cocoa powder on top, if desired. ",
+      "Variations:",
+      "Simpler Version: For a less rich, two-ingredient martini, combine 2 ounces of vodka and 1 ounce of chocolate liqueur.",
+      "With Irish Cream: Substitute the half-and-half and/or some of the crème de cacao with Irish cream liqueur (like Baileys) for a slightly different flavor profile.",
+      "White Chocolate Martini: Use white chocolate liqueur and, optionally, peppermint schnapps or heavy cream for a white chocolate twist. "
+    ],
+    "image": "https://i0.wp.com/www.imbored-letsgo.com/wp-content/uploads/2014/01/Chocolate-Martini.jpg?ssl=1",
+    "keywords": [
+      "Chocolate",
+      "Martini",
+      "Dessert"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "eggnog-(savidge-kitchen)-1765813296448",
+    "name": "Eggnog (Savidge Kitchen)",
+    "description": "Eggnog, historically also known as a milk punch or an egg milk punch when alcoholic beverages are added, is a rich, chilled, sweetened, dairy-based beverage traditionally made with milk, cream, sugar, egg yolk and whipped egg white. A distilled spirit such as brandy, rum, whiskey or bourbon is often a key ingredient.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "4",
+        "measure": "",
+        "ingredient": "Eggs (separated)"
+      },
+      {
+        "quantity": "1/3",
+        "measure": "",
+        "ingredient": "cup Sugar"
+      },
+      {
+        "quantity": "~1",
+        "measure": "",
+        "ingredient": "tsp. Nutmeg"
+      },
+      {
+        "quantity": "1.5",
+        "measure": "",
+        "ingredient": "cups Milk/milk substitute"
+      },
+      {
+        "quantity": "1.5",
+        "measure": "",
+        "ingredient": "cup Heavy cream"
+      },
+      {
+        "quantity": "4",
+        "measure": "",
+        "ingredient": "oz. Bourbon, Brandy, or Rum (Adjust to preferred amount)"
+      }
+    ],
+    "directions": [
+      "Separate eggs.",
+      "Add 1/3 cup sugar and egg yolks to a bowl and beat until all of the sugar is dissolved.",
+      "Add milk, cream and bourbon to egg yolk mixture and blend until mixed. ",
+      "In a separate bowl beat egg whites while gradually adding 1 tbsp. of sugar,  until stiff white peaks form. ",
+      "Add egg whites and nutmeg to egg yolk/milk mixture. ",
+      "Blend until egg whites are completely incorporated."
+    ],
+    "image": "https://i1.pickpik.com/photos/837/202/438/egg-nog-christmas-drink-eggnog-preview.jpg",
+    "keywords": [
+      "Holidays",
+      "Christmas",
+      "Eggnog"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "coffee-liqueur-(kahlua)-1765813547148",
+    "name": "Coffee Liqueur (Kahlua)",
+    "description": "This recipes gives you DIY coffee liqueur fast and easy- no waiting for anything to steep or soak. It also uses REAL coffee. You can make Coffee Liqueur with any spirit you choose- Vodka, Rum and Bourbon are all in my line-up. But keep in mind that the spirit will affect the flavor of the coffee liqueur. ",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "cups Sugar"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "cup Coffee (strong brew/dark roast)"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "tbsp. Vanilla extract (high quality)"
+      },
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "cups  White Rum, Vodka, or Bourbon"
+      }
+    ],
+    "directions": [
+      "Add sugar and coffee to heavy bottom pot. ",
+      "Slowly bring to a boil (med/med-high).",
+      "Take syrup off heat as soon as it boils. ",
+      "Let syrup cool completely. ",
+      "Add Syrup, alcohol of choice, and vanilla extract to storage container and shake to mix."
+    ],
+    "image": "https://i.ytimg.com/vi/QTx4tHiEZIM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCuZ6GnwLXyV9-VBpV8MBVweRxARw",
+    "keywords": [
+      "Kahlua",
+      "Liqueur",
+      "Coffee",
+      "Homemade"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "irish-cream-liqueur-(bailey's)-1765813834730",
+    "name": "Irish Cream Liqueur (Bailey's)",
+    "description": "Baileys Irish Cream really is a simple combination of cream, Irish whisky, and (as they say on their website) \"other flavors\". Those other flavors are hints of vanilla, coffee, chocolate, and Almond. Yes, you read that right, ALMOND. Adding just a touch of almond extract takes this home recipe and makes it indistinguishable from the store bought version. ",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "2/3 cup Jameson whiskey"
+      },
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "Tbsp. Chocolate syrup"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "can Sweetened condensed milk"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "cup Dairy (cream, heavy cream, half-n-half)"
+      },
+      {
+        "quantity": "1/2",
+        "measure": "",
+        "ingredient": "tsp. Instant coffee granules"
+      },
+      {
+        "quantity": "1/2",
+        "measure": "",
+        "ingredient": "tsp. Almond extract"
+      }
+    ],
+    "directions": [
+      "Add sweetened condensed milk and whiskey in a blender. ",
+      "Blend. ",
+      "Add chocolate syrup, coffee granules, almond extract, and dairy to blender. ",
+      "Blend. ",
+      "!!! Do not blend too much, cream will separate from the mix !!!"
+    ],
+    "image": "https://i.ytimg.com/vi/HVP-2StG4hc/maxresdefault.jpg",
+    "keywords": [
+      "Bailey's",
+      "Homemade",
+      "Liqueur"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "mile-high-1765814140152",
+    "name": "Mile High",
+    "description": "A late-night, dry Margarita that's high on booze, low on citrus and with subtle pineapple fruitiness. Adapted from cocktail created circa 2019 by Alexander Kady, a bartender in Denver, USA.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "oz Woodford Reserve Bourbon"
+      },
+      {
+        "quantity": "1/2",
+        "measure": "",
+        "ingredient": "oz Filthy black cherry syrup"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz sweet vermouth"
+      },
+      {
+        "quantity": "3",
+        "measure": "",
+        "ingredient": "dashes orange bitters"
+      }
+    ],
+    "directions": [
+      "Combine all ingredients in a mixing glass with ice. ",
+      "Stir until well chilled and strain into a decanter. ",
+      "Add smoke, cover with a lid, and swirl to infuse. ",
+      "Pour into a rocks glass over ice. ",
+      "Garnish with a Filthy black cherry."
+    ],
+    "image": "https://cdn.diffordsguide.com/cocktail/RK2JXO/default/0/512x.webp",
+    "keywords": [
+      "Margaritaville at Sea",
+      "Smoke Infusion"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "paper-plane-1765814294699",
+    "name": "Paper Plane",
+    "description": "The Paper Plane is a modern classic cocktail known for its balance of sweet, sour, and bitter notes, made with equal parts bourbon, Aperol, Amaro Nonino, and fresh lemon juice. ",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Buffalo Trace Bourbon"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Aperol"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Nonino Quintessentia Amaro"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz fresh lemon juice"
+      }
+    ],
+    "directions": [
+      "Combine all ingredients in a shaker with ice. ",
+      "Shake vigorously. ",
+      "Garnish with a lemon twist."
+    ],
+    "image": "https://www.sipandfeast.com/wp-content/uploads/2024/12/paper-plane-cocktail-snippet-2.jpg",
+    "keywords": [
+      "Margaritaville at Sea",
+      "Classic"
+    ],
+    "source": "User Created"
+  },
+  {
+    "slug": "watermelon-express-1765814566767",
+    "name": "Watermelon Express",
+    "description": "Recipe from Margaritaville at Sea Paradise cruise.",
+    "github": "",
+    "ingredients": [
+      {
+        "quantity": "2",
+        "measure": "",
+        "ingredient": "oz Corazón Silver Tequila"
+      },
+      {
+        "quantity": "3",
+        "measure": "",
+        "ingredient": "fresh watermelon cubes"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz Monin Watermelon syrup"
+      },
+      {
+        "quantity": "3/4",
+        "measure": "",
+        "ingredient": "oz fresh orange juice"
+      },
+      {
+        "quantity": "1",
+        "measure": "",
+        "ingredient": "oz fresh lime juice"
+      }
+    ],
+    "directions": [
+      "Muddle the watermelon in a shaker.",
+      "Add ice and the remaining ingredients. ",
+      "Shake vigorously and double strain into a highball glass with ice. ",
+      "Garnish with a lime wheel."
+    ],
+    "image": "https://scontent-mia3-2.xx.fbcdn.net/v/t39.30808-6/518475288_10172458074960647_3324225887942592407_n.jpg?stp=cp6_dst-jpg_p526x296_tt6&_nc_cat=103&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=XPh_tWP5MhwQ7kNvwFE7grM&_nc_oc=AdmPDxwuEelEv6Hcfzvnynj-vZp4DAc3w1PmnDl_jiaIur8kG1wlrGr4LGPBfjZF5oc&_nc_zt=23&_nc_ht=scontent-mia3-2.xx&_nc_gid=EyxfF8cFLmGNoewtKQx4SQ&oh=00_Afl-cnGSuFxdMEVfbxBDJa3iE8_q0v4Hp5gp_LEmTwgncg&oe=694606FA",
+    "keywords": [
+      "Margaritaville at Sea"
+    ],
+    "source": "User Created"
+  }
+]

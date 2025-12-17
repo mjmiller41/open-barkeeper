@@ -1,0 +1,34 @@
+{
+    "name": "The Alexander",
+    "description": "A classic, creamy dessert drink that is most famously known in its modern variation, the Brandy Alexander. The original gin-based version appeared in print as early as 1916, while the brandy version, which has largely surpassed the original in popularity, emerged in the 1920s.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Gin"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Creme de Cacao"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz heavy cream"
+        }
+    ],
+    "directions": [
+        "Chill a glass: Place a coupe or martini glass in the freezer or fill it with ice and water while you prepare the drink.",
+        "Combine ingredients: Add the brandy, crème de cacao, and cream into a cocktail shaker filled halfway with ice cubes.",
+        "Shake vigorously: Shake well for 15-20 seconds until the mixture is frothy and the outside of the shaker is very cold.",
+        "Strain and serve: Strain the mixture into your chilled glass. For a smoother texture, you can double-strain through a fine mesh strainer.",
+        "Garnish: Grate fresh nutmeg over the top and serve immediately. "
+    ],
+    "image": "the-alexander.jpg",
+    "keywords": [
+        "Gin",
+        "Classic"
+    ]
+}

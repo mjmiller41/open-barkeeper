@@ -1,0 +1,38 @@
+{
+    "name": "Cider Whiskey Sour",
+    "description": "This Apple Cider Whiskey Sour is the perfect chilly weather cocktail! Warm cinnamon spice, whiskey and lemon juice get added to this wonderful apple cider cocktail to make it a delicious hit.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "oz whiskey"
+        },
+        {
+            "quantity": "1.5",
+            "measure": "",
+            "ingredient": "oz cider simple syrup"
+        },
+        {
+            "quantity": "1.5",
+            "measure": "",
+            "ingredient": "oz lemon juice"
+        },
+        {
+            "quantity": "cinnamon",
+            "measure": "",
+            "ingredient": "stick for garnish (optional)"
+        }
+    ],
+    "directions": [
+        "Add the apple cider, whiskey, lemon juice, and simple syrup to a cocktail shaker filled with ice and shake. ",
+        "Strain into a glass filled with ice. ",
+        "Garnish with a cinnamon stick and serve."
+    ],
+    "image": "cider-whiskey-sour.jpg",
+    "keywords": [
+        "Cider",
+        "Apple",
+        "Sour"
+    ]
+}

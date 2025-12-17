@@ -1,0 +1,38 @@
+{
+    "name": "Chocolate Mudslide",
+    "description": "Similar to the traditional mudslide with the addition of chocolate liqueur.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Kahlua"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Bailey’s"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz chocolate liqueur"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz vodka"
+        }
+    ],
+    "directions": [
+        "Drizzle inside of serving glass with ice.",
+        "Shake all ingredients in shake with ice.",
+        "Strain into serving glass with ice.",
+        "Garnish"
+    ],
+    "image": "chocolate-mudslide.jpg",
+    "keywords": [
+        "Chocolate",
+        "Mudslide"
+    ]
+}

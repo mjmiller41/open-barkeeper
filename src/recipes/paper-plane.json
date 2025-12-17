@@ -1,0 +1,37 @@
+{
+    "name": "Paper Plane",
+    "description": "The Paper Plane is a modern classic cocktail known for its balance of sweet, sour, and bitter notes, made with equal parts bourbon, Aperol, Amaro Nonino, and fresh lemon juice. ",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Buffalo Trace Bourbon"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Aperol"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Nonino Quintessentia Amaro"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz fresh lemon juice"
+        }
+    ],
+    "directions": [
+        "Combine all ingredients in a shaker with ice. ",
+        "Shake vigorously. ",
+        "Garnish with a lemon twist."
+    ],
+    "image": "paper-plane.jpg",
+    "keywords": [
+        "Margaritaville at Sea",
+        "Classic"
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "name": "Dirty Snowman",
+    "description": "A boozy hot chocolate float made with ice cream, hot chocolate, and Baileys Irish Cream.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "cup hot chocolate"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Bailey’s"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz Kahlua"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz chocolate liqueur"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "scoop ice cream"
+        },
+        {
+            "quantity": "Whipped",
+            "measure": "",
+            "ingredient": "cream"
+        },
+        {
+            "quantity": "Chocolate",
+            "measure": "",
+            "ingredient": "shavings"
+        }
+    ],
+    "directions": [
+        "Combine all the liqueurs in a large mug.",
+        "Add hot chocolate and ice cream.",
+        "Garnish."
+    ],
+    "image": "dirty-snowman.jpg",
+    "keywords": [
+        "Ice Cream",
+        "Float",
+        "Chocolate"
+    ]
+}

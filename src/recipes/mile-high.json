@@ -1,0 +1,39 @@
+{
+    "name": "Mile High",
+    "description": "A late-night, dry Margarita that's high on booze, low on citrus and with subtle pineapple fruitiness. Adapted from cocktail created circa 2019 by Alexander Kady, a bartender in Denver, USA.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "oz Woodford Reserve Bourbon"
+        },
+        {
+            "quantity": "1/2",
+            "measure": "",
+            "ingredient": "oz Filthy black cherry syrup"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "oz sweet vermouth"
+        },
+        {
+            "quantity": "3",
+            "measure": "",
+            "ingredient": "dashes orange bitters"
+        }
+    ],
+    "directions": [
+        "Combine all ingredients in a mixing glass with ice. ",
+        "Stir until well chilled and strain into a decanter. ",
+        "Add smoke, cover with a lid, and swirl to infuse. ",
+        "Pour into a rocks glass over ice. ",
+        "Garnish with a Filthy black cherry."
+    ],
+    "image": "mile-high.webp",
+    "keywords": [
+        "Margaritaville at Sea",
+        "Smoke Infusion"
+    ]
+}

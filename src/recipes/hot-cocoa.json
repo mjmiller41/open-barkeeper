@@ -1,0 +1,43 @@
+{
+    "name": "Hot Cocoa",
+    "description": "A cold weather classic.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "cup milk"
+        },
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "tbsp cocoa powder"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "1/2 tbsp brown sugar"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "tbsp heavy cream"
+        },
+        {
+            "quantity": "1/4",
+            "measure": "",
+            "ingredient": "tsp vanilla extract"
+        }
+    ],
+    "directions": [
+        "Warm the milk.",
+        "Combine with remaining ingredients.",
+        "Garnish with whipped cream or marshmallows"
+    ],
+    "image": "hot-cocoa.jpg",
+    "keywords": [
+        "Winter",
+        "Non-Alcoholic",
+        "Cocoa"
+    ]
+}

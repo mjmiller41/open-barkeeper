@@ -1,0 +1,61 @@
+{
+    "name": "Chocolate Liqueur",
+    "description": "A creamy easy and so delicious Chocolate Liqueur Recipe. A perfect after dinner dessert Drink.",
+    "github": "mjmiller41",
+    "ingredients": [
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "cup water"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "1/4 cup sugar"
+        },
+        {
+            "quantity": "3/4",
+            "measure": "",
+            "ingredient": "cup unsweetened cocoa powder"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "tsp vanilla extract"
+        },
+        {
+            "quantity": "1/2",
+            "measure": "",
+            "ingredient": "tsp espresso powder"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "pinch salt"
+        },
+        {
+            "quantity": "2",
+            "measure": "",
+            "ingredient": "cups brandy or spirit of choice"
+        }
+    ],
+    "directions": [
+        "Blend dry ingredients together in a bowl.",
+        "Bring water to a boil",
+        "Add dry ingredient mixture, stirring to avoid clumping. ",
+        "Let boil for a minute, then remove from heat and let cool completely. ",
+        "Once cooled, add to a lidded container with 2 cups of brandy, seal then shake to combine.",
+        "To make MILK CHOCOLATE LIQUEUR:",
+        "Make the syrup the same as above. ",
+        "When it comes to blending, add 14oz sweetened condensed milk to a blender with 1 1/4 cup brandy.",
+        "Blend for 10 seconds.",
+        "Add 1 cup cream, and 1 cup of the syrup. Blend again till just combined.",
+        "Transfer to a lidded container, and keep in the fridge for up to two months. ",
+        "Separation is normal! Simply give this a good shake before pouring. Cheers! "
+    ],
+    "image": "chocolate-liqueur.jpg",
+    "keywords": [
+        "Chocolate",
+        "Liqueur"
+    ]
+}
