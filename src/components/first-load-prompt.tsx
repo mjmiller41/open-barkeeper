@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getAllRecipes } from "@/lib/recipes";
+import { loadStaticRecipes } from "@/lib/recipes";
 
 interface FirstLoadPromptProps {
 	isOpen: boolean;
@@ -16,7 +16,7 @@ export function FirstLoadPrompt({ isOpen, onClose }: FirstLoadPromptProps) {
 
 	const handleDownload = async () => {
 		setIsDownloading(true);
-		const recipes = getAllRecipes();
+		const recipes = await loadStaticRecipes();
 		const total = recipes.length;
 		let count = 0;
 

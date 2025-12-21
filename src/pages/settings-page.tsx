@@ -1,15 +1,26 @@
 import { useState, useRef } from "react";
-import { deleteAllUserRecipes, exportUserRecipes, importUserRecipes, Recipe, updateUserRecipe } from "@/lib/recipes";
+import { Recipe } from "@/lib/recipes";
 import { useOfflineStorage } from "@/hooks/use-offline-storage";
+import { useRecipes } from "@/providers/recipe-provider";
 
 export function SettingsPage() {
 	const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 	const [conflicts, setConflicts] = useState<Array<{ existing: Recipe, new: Recipe }>>([]);
 	const fileInputRef = useRef<HTMLInputElement>(null);
+	const favoritesFileInputRef = useRef<HTMLInputElement>(null);
 	const { isDownloaded, isDownloading, progress, downloadRecipes, deleteRecipes } = useOfflineStorage();
 
+	const {
+		exportRecipes,
+		importRecipes,
+		deleteAllUserRecipes,
+		updateUserRecipe,
+		exportFavorites,
+		importFavorites
+	} = useRecipes();
+
 	const handleExport = () => {
-		const recipes = exportUserRecipes();
+		const recipes = exportRecipes();
 		const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(recipes, null, 2));
 		const downloadAnchorNode = document.createElement('a');
 		downloadAnchorNode.setAttribute("href", dataStr);
@@ -18,6 +29,18 @@ export function SettingsPage() {
 		downloadAnchorNode.click();
 		downloadAnchorNode.remove();
 		setMessage({ type: 'success', text: `Exported ${recipes.length} recipes.` });
+	};
+
+	const handleExportFavorites = () => {
+		const favorites = exportFavorites();
+		const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(favorites, null, 2));
+		const downloadAnchorNode = document.createElement('a');
+		downloadAnchorNode.setAttribute("href", dataStr);
+		downloadAnchorNode.setAttribute("download", "favorites.json");
+		document.body.appendChild(downloadAnchorNode);
+		downloadAnchorNode.click();
+		downloadAnchorNode.remove();
+		setMessage({ type: 'success', text: `Exported ${favorites.length} favorites.` });
 	};
 
 	const handleImportClick = () => {
@@ -33,7 +56,7 @@ export function SettingsPage() {
 		const reader = new FileReader();
 		reader.onload = (e) => {
 			const content = e.target?.result as string;
-			const result = importUserRecipes(content);
+			const result = importRecipes(content);
 
 			if (result.conflicts.length > 0) {
 				setConflicts(result.conflicts);
@@ -48,6 +71,28 @@ export function SettingsPage() {
 
 			// Reset input so same file can be selected again if needed
 			if (fileInputRef.current) fileInputRef.current.value = "";
+		};
+		reader.readAsText(fileObj);
+	};
+
+	const handleFavoritesFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const fileObj = event.target.files && event.target.files[0];
+		if (!fileObj) {
+			return;
+		}
+
+		const reader = new FileReader();
+		reader.onload = (e) => {
+			const content = e.target?.result as string;
+			const result = importFavorites(content);
+
+			if (result.success) {
+				setMessage({ type: 'success', text: result.message });
+			} else {
+				setMessage({ type: 'error', text: result.message });
+			}
+
+			if (favoritesFileInputRef.current) favoritesFileInputRef.current.value = "";
 		};
 		reader.readAsText(fileObj);
 	};
@@ -127,6 +172,37 @@ export function SettingsPage() {
 							{message.text}
 						</div>
 					)}
+				</div>
+			</div>
+
+			<div className="space-y-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+				<h2 className="text-xl font-semibold">Favorites Management</h2>
+				<div className="space-y-4">
+					<p className="text-sm text-gray-500 dark:text-gray-400">
+						Backup your favorite recipes listing or restore from a file.
+					</p>
+
+					<div className="flex gap-4">
+						<button
+							onClick={handleExportFavorites}
+							className="rounded-md bg-purple-600 px-4 py-2 text-sm font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+						>
+							Export Favorites
+						</button>
+						<button
+							onClick={() => favoritesFileInputRef.current?.click()}
+							className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+						>
+							Import Favorites
+						</button>
+						<input
+							type="file"
+							accept=".json"
+							ref={favoritesFileInputRef}
+							style={{ display: 'none' }}
+							onChange={handleFavoritesFileChange}
+						/>
+					</div>
 				</div>
 			</div>
 

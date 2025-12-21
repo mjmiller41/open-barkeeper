@@ -2,20 +2,17 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { RecipeCard } from "@/components/recipe-card";
 import { Recipe, searchRecipesAdvanced } from "@/lib/recipes";
+import { useRecipes } from "@/providers/recipe-provider";
 
 export function SearchPage() {
     const [searchParams, setSearchParams] = useSearchParams();
+    const { recipes } = useRecipes();
 
     // Initialize state from URL params
     const initialName = searchParams.get("name") || "";
     const initialIngredients = searchParams.get("ingredients") || "";
     const initialKeywords = searchParams.get("keywords") || "";
 
-    // Keep local state for the inputs so typing doesn't trigger URL updates immediately if we want to wait for "Search"
-    // However, the prompt implies "load a new search page with the user provided parameters" when clicked.
-    // But usually standard pattern is inputs are controlled by local state, and sync to URL on search.
-    // OR inputs are controlled by URL directly (if we want instant search, but there is a button).
-    // Let's use local state for inputs, initializing from URL.
     const [name, setName] = useState(initialName);
     const [ingredients, setIngredients] = useState(initialIngredients);
     const [keywords, setKeywords] = useState(initialKeywords);
@@ -44,7 +41,7 @@ export function SearchPage() {
                 .map((k) => k.trim())
                 .filter((k) => k);
 
-            const found = searchRecipesAdvanced({
+            const found = searchRecipesAdvanced(recipes, {
                 name: currentName.trim() || undefined,
                 ingredients: ingredientList,
                 keywords: keywordList,
@@ -52,12 +49,10 @@ export function SearchPage() {
             setResults(found);
             setHasSearched(true);
         } else {
-            // If clear, maybe reset? or just leave empty results?
-            // "Search Recipes" implies explicit action, but usually empty URL means empty state.
             setResults([]);
             setHasSearched(false);
         }
-    }, [searchParams]);
+    }, [searchParams, recipes]); // Re-run if recipes change (e.g. user added one)
 
     const handleSearch = () => {
         // Update URL params, which will trigger the Effect above

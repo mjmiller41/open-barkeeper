@@ -1,18 +1,23 @@
 import { Link } from "react-router";
 import { Recipe, getRecipeImageSrc } from "@/lib/recipes";
 import { OfflineAwareImage } from "./offline-aware-image";
+import { useRecipes } from "@/providers/recipe-provider";
+import { Heart } from "lucide-react";
 
 interface RecipeCardProps {
 	recipe: Recipe;
 }
 
 export function RecipeCard({ recipe }: RecipeCardProps) {
+	const { favorites, toggleFavorite } = useRecipes();
+	const isFavorite = favorites.has(recipe.slug);
+
 	return (
 		<Link
 			to={`/recipes/${recipe.slug}`}
 			className="group block overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md dark:border-gray-800 dark:bg-gray-950"
 		>
-			<div className="aspect-[4/3] w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
+			<div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
 				<OfflineAwareImage
 					src={getRecipeImageSrc(recipe.image)}
 					alt={recipe.name}
@@ -22,6 +27,16 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
 						(e.target as HTMLImageElement).src = "/logo.svg"; // Fallback image
 					}}
 				/>
+				<button
+					onClick={(e) => {
+						e.preventDefault();
+						toggleFavorite(recipe.slug);
+					}}
+					className="absolute top-2 right-2 rounded-full bg-white/80 p-2 text-gray-500 backdrop-blur-sm transition-colors hover:bg-white hover:text-red-500 focus:ring-2 focus:ring-red-500 focus:outline-none dark:bg-black/50 dark:text-gray-300 dark:hover:bg-black/70 dark:hover:text-red-400"
+					aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+				>
+					<Heart className={`h-5 w-5 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
+				</button>
 			</div>
 			<div className="p-4">
 				<h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 dark:text-gray-50 dark:group-hover:text-blue-400">

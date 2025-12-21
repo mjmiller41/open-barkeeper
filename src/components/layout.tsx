@@ -1,6 +1,5 @@
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router";
-import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
 import { useAdSense } from "@/hooks/use-adsense";
 
 // FirstLoadPrompt removed
@@ -28,6 +27,9 @@ export function Layout() {
 						<nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
 							<Link to="/recipes" className="transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
 								Recipes
+							</Link>
+							<Link to="/favorites" className="transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
+								Favorites
 							</Link>
 							<Link to="/search" className="transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
 								Search
@@ -65,6 +67,9 @@ export function Layout() {
 						<nav className="flex flex-col space-y-4">
 							<Link to="/recipes" className="text-sm font-medium transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
 								Recipes
+							</Link>
+							<Link to="/favorites" className="text-sm font-medium transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
+								Favorites
 							</Link>
 							<Link to="/search" className="text-sm font-medium transition-colors hover:text-gray-900/80 dark:hover:text-gray-50/80">
 								Search

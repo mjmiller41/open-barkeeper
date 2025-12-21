@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { Recipe, searchRecipesFuzzy } from "@/lib/recipes";
+import { useRecipes } from "@/providers/recipe-provider";
 import { RecipeCard } from "./recipe-card";
+import { Filter, Search, X, Heart } from "lucide-react";
 
 interface RecipeListProps {
 	recipes: Recipe[];
@@ -14,12 +16,21 @@ export function RecipeList({ recipes: initialRecipes }: RecipeListProps) {
 	const [ingredientInput, setIngredientInput] = useState("");
 	const [tagInput, setTagInput] = useState("");
 
+	const [showFavorites, setShowFavorites] = useState(false);
+	const { favorites } = useRecipes();
+
 	const filteredRecipes = useMemo(() => {
-		return searchRecipesFuzzy(query, {
+		let results = searchRecipesFuzzy(initialRecipes, query, {
 			ingredients: selectedIngredients,
 			keywords: selectedTags,
 		});
-	}, [query, selectedIngredients, selectedTags, initialRecipes]);
+
+		if (showFavorites) {
+			results = results.filter((r) => favorites.has(r.slug));
+		}
+
+		return results;
+	}, [query, selectedIngredients, selectedTags, initialRecipes, showFavorites, favorites]);
 
 	const addIngredient = () => {
 		const val = ingredientInput.trim();
@@ -53,26 +64,15 @@ export function RecipeList({ recipes: initialRecipes }: RecipeListProps) {
 						<div className="relative flex-1">
 							<input
 								type="text"
+								id="search-recipes"
+								aria-label="Search recipes"
 								placeholder="Search recipes..."
 								value={query}
 								onChange={(e) => setQuery(e.target.value)}
 								className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 pl-11 text-gray-900 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50 dark:focus:border-blue-400 dark:focus:ring-blue-400"
 							/>
 							<div className="absolute top-3.5 left-3 text-gray-400">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="20"
-									height="20"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									strokeWidth="2"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								>
-									<circle cx="11" cy="11" r="8" />
-									<path d="m21 21-4.3-4.3" />
-								</svg>
+								<Search className="h-5 w-5" />
 							</div>
 						</div>
 						<button
@@ -82,20 +82,18 @@ export function RecipeList({ recipes: initialRecipes }: RecipeListProps) {
 								: "border-gray-200 bg-white text-gray-700 hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-300 dark:hover:bg-gray-900"
 								}`}
 						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="18"
-								height="18"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-							>
-								<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-							</svg>
+							<Filter className="h-4.5 w-4.5" />
 							Filters
+						</button>
+						<button
+							onClick={() => setShowFavorites(!showFavorites)}
+							className={`flex items-center gap-2 rounded-lg border px-4 py-3 text-sm font-medium transition-colors ${showFavorites
+								? "border-red-200 bg-red-50 text-red-700 dark:border-red-900/30 dark:bg-red-900/20 dark:text-red-300"
+								: "border-gray-200 bg-white text-gray-700 hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-300 dark:hover:bg-gray-900"
+								}`}
+						>
+							<Heart className={`h-4.5 w-4.5 ${showFavorites ? "fill-current" : ""}`} />
+							Favorites
 						</button>
 					</div>
 
@@ -104,12 +102,13 @@ export function RecipeList({ recipes: initialRecipes }: RecipeListProps) {
 						<div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950">
 							<div className="grid gap-4 md:grid-cols-2">
 								<div>
-									<label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">
+									<label htmlFor="ingredient-filter" className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">
 										Filter by ingredient
 									</label>
 									<div className="flex gap-2">
 										<input
 											type="text"
+											id="ingredient-filter"
 											value={ingredientInput}
 											onChange={(e) => setIngredientInput(e.target.value)}
 											onKeyDown={(e) => e.key === "Enter" && addIngredient()}
@@ -126,12 +125,13 @@ export function RecipeList({ recipes: initialRecipes }: RecipeListProps) {
 									</div>
 								</div>
 								<div>
-									<label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">
+									<label htmlFor="tag-filter" className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">
 										Filter by tag
 									</label>
 									<div className="flex gap-2">
 										<input
 											type="text"
+											id="tag-filter"
 											value={tagInput}
 											onChange={(e) => setTagInput(e.target.value)}
 											onKeyDown={(e) => e.key === "Enter" && addTag()}
@@ -164,7 +164,7 @@ export function RecipeList({ recipes: initialRecipes }: RecipeListProps) {
 										onClick={() => removeIngredient(ing)}
 										className="ml-0.5 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200"
 									>
-										×
+										<X className="h-3 w-3" />
 									</button>
 								</span>
 							))}
@@ -178,7 +178,7 @@ export function RecipeList({ recipes: initialRecipes }: RecipeListProps) {
 										onClick={() => removeTag(tag)}
 										className="ml-0.5 text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-200"
 									>
-										×
+										<X className="h-3 w-3" />
 									</button>
 								</span>
 							))}

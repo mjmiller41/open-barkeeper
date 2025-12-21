@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -99,5 +100,12 @@ export default defineConfig({
             },
         },
         chunkSizeWarningLimit: 1000,
+    },
+    // @ts-expect-error - Vitest types are not automatically picked up by Vite's defineConfig
+    test: {
+        globals: true,
+        environment: "jsdom",
+        setupFiles: "./src/test/setup.ts",
+        css: false,
     },
 });

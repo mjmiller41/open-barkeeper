@@ -1,8 +1,8 @@
 import { RecipeList } from "@/components/recipe-list";
-import { getAllRecipes } from "@/lib/recipes";
+import { useRecipes } from "@/providers/recipe-provider";
 
 export function RecipesPage() {
-	const recipes = getAllRecipes();
+	const { recipes } = useRecipes();
 
 	return (
 		<div className="space-y-8">

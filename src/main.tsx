@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { Layout } from "@/components/layout";
 import { LoadingSpinner } from "@/components/loading-spinner";
-import { RouteProvider } from "@/providers/router-provider";
+import { RecipeProvider } from "@/providers/recipe-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 import { registerSW } from "virtual:pwa-register";
@@ -14,6 +14,7 @@ const HomeScreen = lazy(() => import("@/pages/home-screen").then(module => ({ de
 const NotFound = lazy(() => import("@/pages/not-found").then(module => ({ default: module.NotFound })));
 const RecipeDetailPage = lazy(() => import("@/pages/recipe-detail-page").then(module => ({ default: module.RecipeDetailPage })));
 const RecipesPage = lazy(() => import("@/pages/recipes-page").then(module => ({ default: module.RecipesPage })));
+const FavoritesPage = lazy(() => import("@/pages/favorites-page").then(module => ({ default: module.FavoritesPage })));
 const SearchPage = lazy(() => import("@/pages/search-page").then(module => ({ default: module.SearchPage })));
 const AboutPage = lazy(() => import("@/pages/about-page").then(module => ({ default: module.AboutPage })));
 const ContactPage = lazy(() => import("@/pages/contact-page").then(module => ({ default: module.ContactPage })));
@@ -34,12 +35,13 @@ createRoot(document.getElementById("root")!).render(
 	<StrictMode>
 		<ThemeProvider>
 			<BrowserRouter>
-				<RouteProvider>
+				<RecipeProvider>
 					<Suspense fallback={<LoadingSpinner />}>
 						<Routes>
 							<Route element={<Layout />}>
 								<Route path="/" element={<HomeScreen />} />
 								<Route path="/recipes" element={<RecipesPage />} />
+								<Route path="/favorites" element={<FavoritesPage />} />
 								<Route path="/recipes/new" element={<CreateRecipePage />} />
 								<Route path="/recipes/:slug" element={<RecipeDetailPage />} />
 								<Route path="/search" element={<SearchPage />} />
@@ -52,7 +54,7 @@ createRoot(document.getElementById("root")!).render(
 							<Route path="*" element={<NotFound />} />
 						</Routes>
 					</Suspense>
-				</RouteProvider>
+				</RecipeProvider>
 			</BrowserRouter>
 		</ThemeProvider>
 	</StrictMode>,

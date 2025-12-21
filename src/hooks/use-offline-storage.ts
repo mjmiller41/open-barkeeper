@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getAllRecipes } from "@/lib/recipes";
+import { loadStaticRecipes } from "@/lib/recipes";
 
 export function useOfflineStorage() {
     const [isDownloaded, setIsDownloaded] = useState(false);
@@ -19,7 +19,7 @@ export function useOfflineStorage() {
     const downloadRecipes = useCallback(async () => {
         setIsDownloading(true);
         setProgress(0);
-        const recipes = getAllRecipes();
+        const recipes = await loadStaticRecipes();
         const total = recipes.length;
         let count = 0;
 

@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
-import { Recipe, deleteUserRecipe, getRecipeBySlug, getRecipeImageSrc, isUserRecipe, updateUserRecipe } from "@/lib/recipes";
+import { Recipe, getRecipeImageSrc } from "@/lib/recipes";
 import { OfflineAwareImage } from "@/components/offline-aware-image";
+import { useRecipes } from "@/providers/recipe-provider";
+import { Heart } from "lucide-react";
 
 export function RecipeDetailPage() {
 	const { slug } = useParams();
 	const navigate = useNavigate();
+	const { recipes, updateUserRecipe, deleteUserRecipe, isUserRecipe, favorites, toggleFavorite } = useRecipes();
+
 	const [recipe, setRecipe] = useState<Recipe | undefined>();
 	const [isEditing, setIsEditing] = useState(false);
 	const [canDelete, setCanDelete] = useState(false);
@@ -18,12 +22,10 @@ export function RecipeDetailPage() {
 	const [directions, setDirections] = useState("");
 	const [keywords, setKeywords] = useState("");
 
-	// Force re-render on updates
-	const [updateTrigger, setUpdateTrigger] = useState(0);
-
 	useEffect(() => {
-		const found = getRecipeBySlug(slug || "");
+		const found = recipes.find(r => r.slug === slug);
 		setRecipe(found);
+
 		if (found) {
 			setName(found.name);
 			setDescription(found.description);
@@ -34,13 +36,7 @@ export function RecipeDetailPage() {
 
 			setCanDelete(isUserRecipe(found.slug));
 		}
-	}, [slug, updateTrigger]);
-
-	useEffect(() => {
-		const handleUpdate = () => setUpdateTrigger(prev => prev + 1);
-		window.addEventListener('recipes-updated', handleUpdate);
-		return () => window.removeEventListener('recipes-updated', handleUpdate);
-	}, []);
+	}, [slug, recipes, isUserRecipe]);
 
 	const handleSave = (e: React.FormEvent) => {
 		e.preventDefault();
@@ -166,6 +162,13 @@ export function RecipeDetailPage() {
 						<div className="flex items-center gap-4">
 							<h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-50">{recipe.name}</h1>
 							<div className="flex gap-2">
+								<button
+									onClick={() => toggleFavorite(recipe.slug)}
+									className="rounded-full p-2 text-gray-500 hover:bg-gray-100 hover:text-red-500 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-red-400"
+									title={favorites.has(recipe.slug) ? "Remove from favorites" : "Add to favorites"}
+								>
+									<Heart className={`h-5 w-5 ${favorites.has(recipe.slug) ? "fill-red-500 text-red-500" : ""}`} />
+								</button>
 								<button
 									onClick={() => setIsEditing(true)}
 									className="rounded-full p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-50"

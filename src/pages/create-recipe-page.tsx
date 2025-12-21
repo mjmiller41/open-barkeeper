@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { Recipe, addUserRecipe } from "@/lib/recipes";
+import { Recipe } from "@/lib/recipes";
+import { useRecipes } from "@/providers/recipe-provider";
 
 export function CreateRecipePage() {
 	const navigate = useNavigate();
+	const { addUserRecipe } = useRecipes();
 	const [name, setName] = useState("");
 	const [description, setDescription] = useState("");
 	const [ingredients, setIngredients] = useState("");
@@ -59,8 +61,9 @@ export function CreateRecipePage() {
 
 			<form onSubmit={handleSubmit} className="space-y-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
 				<div className="space-y-2">
-					<label className="text-sm font-medium">Name</label>
+					<label htmlFor="recipe-name" className="text-sm font-medium">Name</label>
 					<input
+						id="recipe-name"
 						required
 						value={name}
 						onChange={(e) => setName(e.target.value)}
@@ -70,8 +73,9 @@ export function CreateRecipePage() {
 				</div>
 
 				<div className="space-y-2">
-					<label className="text-sm font-medium">Description</label>
+					<label htmlFor="recipe-description" className="text-sm font-medium">Description</label>
 					<textarea
+						id="recipe-description"
 						required
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
@@ -81,8 +85,9 @@ export function CreateRecipePage() {
 				</div>
 
 				<div className="space-y-2">
-					<label className="text-sm font-medium">Image URL</label>
+					<label htmlFor="recipe-image" className="text-sm font-medium">Image URL</label>
 					<input
+						id="recipe-image"
 						value={image}
 						onChange={(e) => setImage(e.target.value)}
 						className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-800"
@@ -91,8 +96,9 @@ export function CreateRecipePage() {
 				</div>
 
 				<div className="space-y-2">
-					<label className="text-sm font-medium">Ingredients (one per line)</label>
+					<label htmlFor="recipe-ingredients" className="text-sm font-medium">Ingredients (one per line)</label>
 					<textarea
+						id="recipe-ingredients"
 						required
 						value={ingredients}
 						onChange={(e) => setIngredients(e.target.value)}
@@ -102,8 +108,9 @@ export function CreateRecipePage() {
 				</div>
 
 				<div className="space-y-2">
-					<label className="text-sm font-medium">Directions (one per line)</label>
+					<label htmlFor="recipe-directions" className="text-sm font-medium">Directions (one per line)</label>
 					<textarea
+						id="recipe-directions"
 						required
 						value={directions}
 						onChange={(e) => setDirections(e.target.value)}
@@ -113,8 +120,9 @@ export function CreateRecipePage() {
 				</div>
 
 				<div className="space-y-2">
-					<label className="text-sm font-medium">Keywords (comma separated)</label>
+					<label htmlFor="recipe-keywords" className="text-sm font-medium">Keywords (comma separated)</label>
 					<input
+						id="recipe-keywords"
 						value={keywords}
 						onChange={(e) => setKeywords(e.target.value)}
 						className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-800"
